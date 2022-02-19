@@ -2,7 +2,7 @@
 
 /**
  * ============================================================
- *   1. DECLARATION DU MENU ............................. L.11
+ *   1. MENU ............................................ L.11
  *   2. AJOUT DU TITRE DANS LE HEADER ................... L.24
  *   3. SUPPRESSION EMOJIS ET COMMENTAIRES .............. L.31
  * ============================================================
@@ -10,16 +10,42 @@
 
 /**
  * -----------------------------------------------------------
- * 1. DECLARATION DU MENU
+ * 1. MENU
  * -----------------------------------------------------------
 */
+
+/** --- A. Déclaration du menu --- */
+
 function awc_enregistrer_menu() {
 	register_nav_menus( array(
-		'primary'  => 'Menu Principal',
-		'footer'   => 'Menu Footer',
+		'primary' => 'Menu Principal',
+		'footer'  => 'Menu Footer',
 	));
 }
 add_action( 'init', 'awc_enregistrer_menu' );
+
+/** --- B. Ajout du logo dans le header --- */
+
+function awc_wp_menu_items( $items, $args ) {
+	$menu = wp_get_nav_menu_object($args->menu);
+
+	if( $args->theme_location == 'primary' ) {
+		$logo = get_field('logo-header', $menu);
+
+		$logoHTML  = '<li class="menu-item-logo me-auto">';
+			$logoHTML .= '<a href="'. home_url() .'">';
+				if ($logo) {
+					$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
+				}
+			$logoHTML .= '</a>';
+		$logoHTML .= '</li>';
+
+		$items = $logoHTML . $items;
+	}
+
+	return $items;
+}
+add_filter('wp_nav_menu_items', 'awc_wp_menu_items', 10, 2);
 
 /**
  * -----------------------------------------------------------

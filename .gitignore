@@ -10,6 +10,8 @@ web/app/languages/*
 # WordPress
 web/wp
 web/.htaccess
+web/app/themes/awc/style.css
+web/app/themes/awc/style.min.css
 
 # Logs
 *.log

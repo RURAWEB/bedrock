@@ -32,12 +32,12 @@ $ff-body:  'Open Sans', 'Helvetica', 'Arial', sans-serif;
 @mixin titre($taille-typo: 2rem) {
 	font: {
 		size: $taille-typo;
-		weight: 600;
+		weight: 700;
 	}
 	margin: 0 0 1rem;
 }
 
-@mixin sous-titre($taille-typo: 2rem) {
+@mixin sous-titre($taille-typo: 1.5rem) {
 	font: {
 		size: $taille-typo;
 		weight: normal;
@@ -50,6 +50,7 @@ $ff-body:  'Open Sans', 'Helvetica', 'Arial', sans-serif;
 		size: 1rem;
 		weight: normal;
 	}
+	color: $typo;
 	line-height: 1.7;
 	margin: .5rem 0;
 }

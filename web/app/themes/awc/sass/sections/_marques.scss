@@ -1,0 +1,32 @@
+// main: ../style.scss
+
+#marques {
+  .tns-inner {
+    position: relative;
+
+    &:before, &:after {
+      position: absolute;
+      top: 0;
+      content: '';
+      width: 10%; height: 100%;
+      z-index: 1;
+    }
+
+    &:before {
+      left: 0;
+      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      background-image: linear-gradient(left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    &:after {
+      right: 0;
+      background-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      background-image: linear-gradient(right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+  }
+
+  .tns-item img {
+    width: 80%; max-width: 100px;
+    max-height: 50px;
+  }
+}

@@ -1,0 +1,15 @@
+// main: ../style.scss
+
+#aide-instructions {
+  height: calc(100vh - 140px);
+
+  #banner {
+    img { filter: brightness(.8); }
+
+    p {
+      text-shadow: 0 0 5px #000000ee;
+
+      &.hn { font-size: 3rem; }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+// main: style.scss
+
+/**
+ * -----------------------------------------------------------
+ * BONES
+ * -----------------------------------------------------------
+*/
+
+/** --- Start --- */
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-size: 16px;
+
+	* {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+body {
+	width: 100vw;
+	max-width: 100%;
+	font: {
+		family: $ff-body;
+		size: 1rem;
+	}
+	overflow-x: hidden;
+	margin: 0;
+}
+
+::selection {
+	background: $primaire;
+	color: white;
+}
+
+:after, :before { box-sizing: border-box; }
+
+/** --- Element Selector --- */
+main, footer { position: relative; }
+
+h1, h2 { @include titre(); }
+h3     { @include sous-titre(); }
+p      { @include paragraphe(); }
+
+a {
+	outline: none;
+	text-decoration: none;
+	@include transition(all);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		a {
+			color: $background;
+		}
+	}
+}
+
+strong { font-weight: 600; }
+
+/**
+ * -----------------------------------------------------------
+ * INITIALISER BLOCS GUTENBERG
+ * -----------------------------------------------------------
+*/
+
+/** --- Couleurs --- */
+.has-primaire-color   { color: $primaire; }
+.has-secondaire-color { color: $secondaire; }
+.has-typo-color       { color: $typo; }
+.has-background-color { color: $background; }
+.has-blanc-color      { color: white; }
+
+.has-primaire-background-color   { background: $primaire; }
+.has-secondaire-background-color { background: $secondaire; }
+.has-typo-background-color       { background: $typo; }
+.has-background-background-color { background: $background; }
+.has-blanc-background-color      { background: white; }
+
+/**
+ * -----------------------------------------------------------
+ * CLASSES ATELIER CONCEPTION WEB
+ * -----------------------------------------------------------
+*/
+
+.hn { @include titre($taille-typo: 2rem); }

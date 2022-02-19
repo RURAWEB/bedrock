@@ -1,0 +1,98 @@
+// main: style.scss
+
+/**
+ * -----------------------------------------------------------
+ * COULEURS
+ * -----------------------------------------------------------
+*/
+
+$primaire:   #8835b0;
+$secondaire: #a5a5a5;
+$input:      #efefef;
+$typo:       #6e6e6e;
+$background: #23252f;
+
+/**
+ * -----------------------------------------------------------
+ * FONTS
+ * -----------------------------------------------------------
+*/
+
+/** --- Typo --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+$ff-titre: 'Poppins', 'Verdana', 'Arial', sans-serif;
+$ff-body:  'Poppins', 'Verdana', 'Arial', sans-serif;
+
+/**
+ * -----------------------------------------------------------
+ * MIXINS
+ * -----------------------------------------------------------
+*/
+
+/** --- Titres --- */
+@mixin titre($taille-typo: 2rem) {
+	font: {
+		size: $taille-typo;
+		weight: 600;
+	}
+	margin: 0 0 1rem;
+}
+
+@mixin sous-titre($taille-typo: 2rem) {
+	font: {
+		family: $ff-titre;
+		size: $taille-typo;
+		weight: normal;
+	}
+	margin: 0 0 .5rem;
+}
+
+@mixin paragraphe() {
+	font: {
+		size: 1rem;
+		weight: normal;
+	}
+	line-height: 1.7;
+	margin: .5rem 0;
+}
+
+/** --- Transition --- */
+@mixin transition($param, $duration: .3s) {
+	-webkit-transition: $param $duration ease;
+	   -moz-transition: $param $duration ease;
+	        transition: $param $duration ease;
+}
+
+@mixin transitionMultiple($transition-list...) {
+	-webkit-transition: $transition-list;
+	   -moz-transition: $transition-list;
+	        transition: $transition-list;
+}
+
+/** --- Transforms --- */
+@mixin transform($x, $y) {
+	-webkit-transform: translate($x, $y);
+	   -moz-transform: translate($x, $y);
+	        transform: translate($x, $y);
+}
+
+@mixin transformScale($value) {
+	-webkit-transform: scale($value);
+	   -moz-transform: scale($value);
+	        transform: scale($value);
+}
+
+@mixin transformMultiple($transforms) {
+	$transform-list: join($transforms, null, space);
+
+	-webkit-transform: $transform-list;
+	   -moz-transform: $transform-list;
+            transform: $transform-list;
+}
+
+/** --- Animations --- */
+@mixin animation($name, $duration: .3s) {
+	-webkit-animation: $name $duration ease-in-out infinite alternate;
+	   -moz-animation: $name $duration ease-in-out infinite alternate;
+	        animation: $name $duration ease-in-out infinite alternate;
+}

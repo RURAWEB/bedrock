@@ -1,0 +1,13 @@
+/** --- masquer les notices d'Update WP --- */
+.wp-admin .update-nag { display: none!important; }
+.post-type-informations .wrap .page-title-action { display: none; }
+
+/** --- style des blocs dans GUT --- */
+.wp-block {
+	max-width: 100%;
+	border: .5px dotted #d4cccc;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.wp-block[data-align=full] { width: 100%; }

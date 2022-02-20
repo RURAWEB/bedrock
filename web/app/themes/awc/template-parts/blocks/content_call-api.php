@@ -4,7 +4,7 @@
   $lien   = get_field('lien-blockAPI');
 ?>
 
-<div class="w-50 text-center mx-auto p-3">
+<div class="redactionnel w-50 text-center mx-auto p-3">
   <?php if( $titre ) : ?>
     <h2 class="text-white"><?php echo $titre; ?></h2>
   <?php endif; ?>
@@ -14,7 +14,43 @@
   <?php endif; ?>
 </div>
 
-<div class="w-75 p-3">
+<div class="w-75 mx-auto p-3">
+  <?php
+    $urlAPI = 'https://jsonplaceholder.typicode.com/albums';
+    $response = wp_remote_get(
+      $urlAPI,
+      $args = array()
+    );
+
+    $responseBody = wp_remote_retrieve_body( $response );
+    $results = json_decode( $responseBody );
+
+    if ( is_array( $results ) && ! is_wp_error( $results ) ) {
+      $length = 0;
+      foreach ( $results as $result ) {
+        echo '<article class="rounded-3 p-4 mb-3 bg-white">';
+          echo '<div class="d-flex flex-row align-items-center justify-content-between">';
+            echo '<p class="user-'. $result->id .'">';
+              echo $result->title;
+            echo '</p>';
+
+            echo '<a class="has-primaire-background-color text-white rounded-3 px-4 py-2" href="#">'. __('Lire', 'awc') .'</a>';
+          echo '</div>';
+        echo '</article>';
+
+        if ( $length < 3 ) {
+          $length++;
+        } else {
+          break;
+        }
+      }
+
+    } else {
+      echo '<article class="class="rounded-3 p-4 mb-3 bg-white">';
+        echo '<p class="text-center">'. __('Non disponible', 'awc') .'</p>';
+      echo '</article>';
+    }
+  ?>
 </div>
 
 <?php //get_template_part('../content', 'liens'); ?>

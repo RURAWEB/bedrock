@@ -1,0 +1,24 @@
+// main: ../style.scss
+
+#questions-faq {
+  .wp-block-cover {
+    span {
+      opacity: 1;
+      border-radius: 1.5rem;
+
+      &:before {
+        background-color: $background;
+        filter: brightness(1.5);
+        border-radius: 1.5rem;
+      }
+    }
+
+    img.wp-block-cover__image-background {
+      border-radius: 1.5rem;
+      mix-blend-mode: overlay;
+      z-index: 1;
+    }
+  }
+
+  .redactionnel * { text-shadow: 0 0 5px #00000030; }
+}

@@ -48,4 +48,60 @@ $(document).ready(function($) {
     })
   }
 
+  // Init autoComplete
+  if ( $('#autoComplete').length > 0 ) {
+    $( '.nav.nav-tabs button' ).each(function(index) {
+      $(this).on('click', function() {
+        console.log($(this).data('key'));
+      });
+    });
+
+    const autoCompleteJS = new autoComplete({
+      data: {
+        src: async () => {
+          try {
+            const source = await fetch('https://tarekraafat.github.io/autoComplete.js/demo/db/generic.json');
+            const data = await source.json();
+
+            document.getElementById('autoComplete').setAttribute('placeholder', autoCompleteJS.placeHolder);
+
+            return data;
+          } catch (error) {
+            return error;
+          }
+        },
+        keys: ['food', 'cities', 'animals'],
+        cache: true,
+        filter: (list) => {
+          const filteredResults = Array.from(new Set(list.map((value) => value.match))).map((food) => {
+            return list.find((value) => value.match === food);
+          });
+
+          return filteredResults;
+        },
+      },
+      placeHolder: 'Ex : 3255556743467',
+      resultsList: {
+        noResults: true,
+        maxResults: 15,
+        tabSelect: true,
+      },
+      resultItem: {
+        element: (item, data) => {
+          item.style = "display: flex; justify-content: space-between;";
+          item.innerHTML = `<span style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">${data.match}</span>
+          <span style="display: flex; align-items: center; font-size: 13px; font-weight: 100; text-transform: uppercase; color: rgba(0,0,0,.2);">${data.key}</span>`;
+        },
+        highlight: false,
+      },
+    });
+
+    autoCompleteJS.input.addEventListener("selection", function (event) {
+      const feedback = event.detail;
+      const selection = feedback.selection.value[feedback.selection.key];
+
+      autoCompleteJS.input.value = selection;
+    });
+  }
+
 }); // ----------->  FIN (document).ready(function($)

@@ -31,5 +31,12 @@ $(document).ready(function($) {
     }
   });
 
+  // Transformer h1 en h3 selon la page
+  if ( $('.home #mots-cles').length > 0 ) {
+    $( '.home #mots-cles article h1' ).each(function(index, elt) {
+      let textH1 = $( this ).text();
+      $( elt ).replaceWith('<h3 class="text-white">' + textH1 + '</h3>');
+    });
+  }
 
 }); // ----------->  FIN (document).ready(function($)

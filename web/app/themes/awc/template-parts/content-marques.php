@@ -27,7 +27,7 @@
         $link_title  = $lien2['title'];
         $link_target = $lien2['target'] ? $lien2['target'] : '_self';
     ?>
-      <a class="button has-primaire-background-color text-white rounded-3 my-5 mx-auto px-4 py-2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+      <a class="button border border-1 has-primaire-background-color text-white rounded-3 my-5 mx-auto px-4 py-2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
     <?php endif; ?>
   </div>
 </section>

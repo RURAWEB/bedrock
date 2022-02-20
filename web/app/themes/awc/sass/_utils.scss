@@ -10,7 +10,7 @@
 html {
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	font-size: 16px;
+	font-size: 15px;
 
 	* {
 		-webkit-font-smoothing: antialiased;
@@ -47,6 +47,10 @@ a {
 	outline: none;
 	text-decoration: none;
 	@include transition(all);
+
+	&:hover {
+		color: $primaire;
+	}
 }
 
 ul {
@@ -62,6 +66,15 @@ ul {
 }
 
 strong { font-weight: 600; }
+
+figure {
+	height: 100%;
+
+	img {
+		width: 100%; height: 100%;
+		object-fit: cover;
+	}
+}
 
 /**
  * -----------------------------------------------------------
@@ -82,10 +95,43 @@ strong { font-weight: 600; }
 .has-background-background-color { background: $background; }
 .has-blanc-background-color      { background: white; }
 
+/** --- Colonnes --- */
+.wp-block-columns {
+	margin-bottom: 0;
+
+	&.is-not-stacked-on-mobile {
+		& > .wp-block-column:not(:first-child) { margin-left: 0; }
+	}
+}
+
+/** --- Images --- */
+.wp-block-image { margin-bottom: 0; }
+
 /**
  * -----------------------------------------------------------
  * CLASSES ATELIER CONCEPTION WEB
  * -----------------------------------------------------------
 */
 
-.hn { @include titre($taille-typo: 2rem); }
+/** --- Design hn --- */
+.hn { @include titre(); }
+
+/** --- Tiny Slider --- */
+.tns-outer {
+	margin: 4rem 0;
+
+	.tns-item {
+		img { object-fit: contain; }
+	}
+}
+
+/** --- Boutons --- */
+.button {
+	display: block;
+	width: fit-content;
+
+	&:hover {
+		background: white;
+		color: $primaire!important;
+	}
+}

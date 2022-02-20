@@ -15,5 +15,11 @@
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 
-	<header>
+	<header class="position-fixed w-100 top-0 start-0 py-5">
+		<?php
+			wp_nav_menu( array(
+				'menu_class'     => 'd-flex flex-row align-items-center gap-4',
+				'theme_location' => 'primary'
+			) );
+		?>
 	</header>

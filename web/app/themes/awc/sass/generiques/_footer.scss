@@ -1,4 +1,36 @@
 // main: ../style.scss
 
 footer {
+  .menu-item-logo {
+    img {
+      width: 50%; max-width: 220px; max-height: 35px;
+      object: {
+        fit: contain;
+        position: left;
+      }
+    }
+  }
+
+  .menu-footer-1-container {
+    .menu-item-notule { width: 40%; }
+  }
+
+  .menu-footer-2-container {
+    #menu-footer-2 { margin-left: auto; }
+  }
+
+  .menu-item {
+    display: inline-block;
+
+    &:not(:last-child) { margin-right: 3rem; }
+
+    a {
+      display: block;
+      font-weight: 600;
+      color: white;
+      margin-top: 4rem;
+    }
+  }
+
+  p { font-weight: 300; }
 }

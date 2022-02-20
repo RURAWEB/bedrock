@@ -2,9 +2,11 @@
 
 /**
  * ============================================================
- *   1. MENU ............................................ L.11
- *   2. AJOUT DU TITRE DANS LE HEADER ................... L.24
- *   3. SUPPRESSION EMOJIS ET COMMENTAIRES .............. L.31
+ *   1. MENU ............................................ L.13
+ *   		A. DÉCLARATION DU MENU .......................... L.19
+ *   		B. AJOUT DU CONTENU DANS LE HEADER & LE FOOTER .. L.30
+ *   2. AJOUT DU TITRE DANS LE HEADER ................... L.72
+ *   3. SUPPRESSION EMOJIS ET COMMENTAIRES .............. L.79
  * ============================================================
 */
 
@@ -19,28 +21,48 @@
 function awc_enregistrer_menu() {
 	register_nav_menus( array(
 		'primary' => 'Menu Principal',
-		'footer'  => 'Menu Footer',
+		'footer1' => 'Menu Footer gauche',
+		'footer2' => 'Menu Footer droite',
 	));
 }
 add_action( 'init', 'awc_enregistrer_menu' );
 
-/** --- B. Ajout du logo dans le header --- */
+/** --- B. Ajout du contenu dans le header & le footer --- */
 
 function awc_wp_menu_items( $items, $args ) {
 	$menu = wp_get_nav_menu_object($args->menu);
 
-	if( $args->theme_location == 'primary' ) {
+	if ( $args->theme_location == 'primary' ) {
 		$logo = get_field('logo-header', $menu);
 
-		$logoHTML  = '<li class="menu-item-logo me-auto">';
-			$logoHTML .= '<a href="'. home_url() .'">';
-				if ($logo) {
+		if ($logo) {
+			$logoHTML  = '<li class="menu-item-logo me-auto">';
+				$logoHTML .= '<a href="'. home_url() .'">';
 					$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
-				}
-			$logoHTML .= '</a>';
-		$logoHTML .= '</li>';
+				$logoHTML .= '</a>';
+			$logoHTML .= '</li>';
+		}
 
 		$items = $logoHTML . $items;
+	}
+
+	if ( $args->theme_location == 'footer1' || $args->theme_location == 'footer2') {
+		$logo   = get_field('logo-footer', $menu);
+		$notule = get_field('notule-footer', $menu);
+
+		if ($logo) {
+			$logoHTML  = '<li class="menu-item-logo mb-4">';
+				$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
+			$logoHTML .= '</li>';
+		}
+
+		if ($notule) {
+			$notuleHTML  = '<li class="menu-item-notule">';
+				$notuleHTML .= '<p class="text-white">'. $notule .'</p>';
+			$notuleHTML .= '</li>';
+		}
+
+		$items = $logoHTML . $notuleHTML . $items;
 	}
 
 	return $items;

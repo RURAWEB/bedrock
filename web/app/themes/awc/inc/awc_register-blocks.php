@@ -4,7 +4,7 @@
  * ============================================================
  *   1. ENREGISTRER LES BLOCS ........................... L.11
  *      A. CALL API ..................................... L.21
- *      B. LIST POSTS ................................... L.37
+ *      B. LIST POSTS ................................... L.34
  * ============================================================
 */
 
@@ -50,8 +50,8 @@ if (function_exists( 'get_field' )) {
 
   function my_acf_block_render_callback( $block ) {
     $slug = str_replace( 'acf/', '', $block['name'] );
-    if( file_exists(get_theme_file_path( "../template-parts/blocks/content_{$slug}.php" )) ) {
-      include(get_theme_file_path( "../template-parts/blocks/content_{$slug}.php" ));
+    if( file_exists(get_theme_file_path( "/template-parts/blocks/content_{$slug}.php" )) ) {
+      include(get_theme_file_path( "/template-parts/blocks/content_{$slug}.php" ));
     }
   }
 

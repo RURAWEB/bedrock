@@ -95,6 +95,18 @@ figure {
 .has-background-background-color { background: $background; }
 .has-blanc-background-color      { background: white; }
 
+/** --- Colonnes --- */
+.wp-block-columns {
+	margin-bottom: 0;
+
+	&.is-not-stacked-on-mobile {
+		& > .wp-block-column:not(:first-child) { margin-left: 0; }
+	}
+}
+
+/** --- Images --- */
+.wp-block-image { margin-bottom: 0; }
+
 /**
  * -----------------------------------------------------------
  * CLASSES ATELIER CONCEPTION WEB

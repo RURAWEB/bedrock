@@ -15,7 +15,10 @@
     <?php endif; ?>
   </div>
 
-  <?php get_template_part('template-parts/content', 'galerie'); ?>
+  <?php
+    get_template_part('template-parts/content', 'galerie');
+    //get_template_part('template-parts/content', 'liens');
+  ?>
 
   <div class="text-center mx-auto">
     <?php

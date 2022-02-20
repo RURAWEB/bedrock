@@ -1,10 +1,21 @@
 // main: ../style.scss
 
 header {
-  .menu-item-logo {
-    img {
-      filter: brightness(.1) sepia(1) saturate(4000%) hue-rotate(270deg);
-      max-width: 200px;
-    }
+  @include transition(all);
+  z-index: 10;
+
+  .menu-header-container {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .menu-item-logo img {
+    filter: brightness(.1) sepia(1) saturate(4000%) hue-rotate(270deg);
+    max-width: 200px;
+  }
+
+  &.header-reduit {
+    .menu-item-logo img { max-width: 150px; }
   }
 }

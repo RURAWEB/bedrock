@@ -16,4 +16,20 @@ $(document).ready(function($) {
     });
   }
 
+  // Réduction du header au scroll
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 150) {
+      $( 'header' ).addClass( 'header-reduit' );
+      $( 'header' ).removeClass( 'py-5' );
+      $( 'header' ).addClass( 'py-4' );
+      $( 'header' ).addClass( 'bg-white' );
+    } else {
+      $( 'header' ).removeClass( 'header-reduit' );
+      $( 'header' ).removeClass( 'py-4' );
+      $( 'header' ).addClass( 'py-5' );
+      $( 'header' ).removeClass( 'bg-white' );
+    }
+  });
+
+
 }); // ----------->  FIN (document).ready(function($)

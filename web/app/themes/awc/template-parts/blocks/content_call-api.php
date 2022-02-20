@@ -6,11 +6,11 @@
 
 <div class="w-50 text-center mx-auto p-3">
   <?php if( $titre ) : ?>
-    <h2><?php echo $titre; ?></h2>
+    <h2 class="text-white"><?php echo $titre; ?></h2>
   <?php endif; ?>
 
   <?php if( $notule ) : ?>
-    <p><?php echo $notule; ?></p>
+    <p class="text-white"><?php echo $notule; ?></p>
   <?php endif; ?>
 </div>
 

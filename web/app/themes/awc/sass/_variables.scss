@@ -19,9 +19,8 @@ $background: #23252f;
 */
 
 /** --- Typo --- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-$ff-titre: 'Poppins', 'Verdana', 'Arial', sans-serif;
-$ff-body:  'Poppins', 'Verdana', 'Arial', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+$ff-body:  'Open Sans', 'Helvetica', 'Arial', sans-serif;
 
 /**
  * -----------------------------------------------------------
@@ -33,16 +32,15 @@ $ff-body:  'Poppins', 'Verdana', 'Arial', sans-serif;
 @mixin titre($taille-typo: 2rem) {
 	font: {
 		size: $taille-typo;
-		weight: 600;
+		weight: 700;
 	}
 	margin: 0 0 1rem;
 }
 
-@mixin sous-titre($taille-typo: 2rem) {
+@mixin sous-titre($taille-typo: 1.25rem) {
 	font: {
-		family: $ff-titre;
 		size: $taille-typo;
-		weight: normal;
+		weight: 700;
 	}
 	margin: 0 0 .5rem;
 }
@@ -52,6 +50,7 @@ $ff-body:  'Poppins', 'Verdana', 'Arial', sans-serif;
 		size: 1rem;
 		weight: normal;
 	}
+	color: $typo;
 	line-height: 1.7;
 	margin: .5rem 0;
 }

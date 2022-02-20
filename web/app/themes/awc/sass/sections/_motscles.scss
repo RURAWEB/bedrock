@@ -1,0 +1,13 @@
+// main: ../style.scss
+
+#mots-cles {
+  article {
+    flex-basis: calc(25% - 1.5rem);
+
+    .wp-block-columns {
+      column-gap: 1.5rem;
+
+      h3 { margin-bottom: 0; }
+    }
+  }
+}

@@ -3,10 +3,10 @@
 /**
  * ============================================================
  *   1. MENU ............................................ L.13
- *   		A. DÉCLARATION DU MENU .......................... L.19
- *   		B. AJOUT DU CONTENU DANS LE HEADER & LE FOOTER .. L.30
- *   2. AJOUT DU TITRE DANS LE HEADER ................... L.72
- *   3. SUPPRESSION EMOJIS ET COMMENTAIRES .............. L.79
+ *      A. DÉCLARATION DU MENU .......................... L.19
+ *      B. AJOUT DU CONTENU DANS LE HEADER & LE FOOTER .. L.30
+ *   2. AJOUT DU TITRE DANS LE HEADER ................... L.82
+ *   3. SUPPRESSION EMOJIS ET COMMENTAIRES .............. L.89
  * ============================================================
 */
 

@@ -45,3 +45,4 @@ require_once get_template_directory() . '/inc/awc_admin.php';
 require_once get_template_directory() . '/inc/awc_images.php';
 
 require_once get_template_directory() . '/inc/awc_front.php';
+require_once get_template_directory() . '/inc/awc_register-blocks.php';

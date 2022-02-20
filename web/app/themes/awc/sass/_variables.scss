@@ -37,10 +37,10 @@ $ff-body:  'Open Sans', 'Helvetica', 'Arial', sans-serif;
 	margin: 0 0 1rem;
 }
 
-@mixin sous-titre($taille-typo: 1.5rem) {
+@mixin sous-titre($taille-typo: 1.25rem) {
 	font: {
 		size: $taille-typo;
-		weight: normal;
+		weight: 700;
 	}
 	margin: 0 0 .5rem;
 }

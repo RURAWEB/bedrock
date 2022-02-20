@@ -21,4 +21,6 @@
   }
 
   .redactionnel * { text-shadow: 0 0 5px #00000030; }
+
+  p[class*="user-"]:first-letter { text-transform: uppercase; }
 }

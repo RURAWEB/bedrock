@@ -1,5 +1,31 @@
 $(document).ready(function($) {
 
+  // Réduction du header au scroll
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 150) {
+      $( 'header' ).addClass( 'header-reduit' );
+      $( 'header' ).removeClass( 'py-5' );
+      $( 'header' ).addClass( 'py-4' );
+      $( 'header' ).addClass( 'bg-white' );
+    } else {
+      $( 'header' ).removeClass( 'header-reduit' );
+      $( 'header' ).removeClass( 'py-4' );
+      $( 'header' ).addClass( 'py-5' );
+      $( 'header' ).removeClass( 'bg-white' );
+    }
+  });
+
+  // Faux sélecteur de $langue
+  if ( $('.menu-item-langue').length > 0 ) {
+    $( '.sous-menu span' ).each(function(index) {
+      $(this).on('click', function() {
+        let langue = $(this).html();
+        $( '.menu-item-langue .active' ).text( langue );
+        console.log(langue);
+      });
+    });
+  }
+
   // Tiny Slider
   if ( $('#slider').length > 0 ) {
     const slider = tns({
@@ -15,21 +41,6 @@ $(document).ready(function($) {
       speed: 400
     });
   }
-
-  // Réduction du header au scroll
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 150) {
-      $( 'header' ).addClass( 'header-reduit' );
-      $( 'header' ).removeClass( 'py-5' );
-      $( 'header' ).addClass( 'py-4' );
-      $( 'header' ).addClass( 'bg-white' );
-    } else {
-      $( 'header' ).removeClass( 'header-reduit' );
-      $( 'header' ).removeClass( 'py-4' );
-      $( 'header' ).addClass( 'py-5' );
-      $( 'header' ).removeClass( 'bg-white' );
-    }
-  });
 
   // Transformer h1 en h3 selon la page
   if ( $('.home #mots-cles').length > 0 ) {
@@ -50,11 +61,11 @@ $(document).ready(function($) {
 
   // Init autoComplete
   if ( $('#autoComplete').length > 0 ) {
-    $( '.nav.nav-tabs button' ).each(function(index) {
-      $(this).on('click', function() {
-        console.log($(this).data('key'));
-      });
-    });
+    //$( '.nav.nav-tabs button' ).each(function(index) {
+    //  $(this).on('click', function() {
+    //    console.log($(this).data('key'));
+    //  });
+    //});
 
     const autoCompleteJS = new autoComplete({
       data: {

@@ -37,13 +37,23 @@ function awc_wp_menu_items( $items, $args ) {
 
 		if ($logo) {
 			$logoHTML  = '<li class="menu-item-logo me-auto">';
-				$logoHTML .= '<a href="'. home_url() .'">';
-					$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
-				$logoHTML .= '</a>';
+			$logoHTML .= '<a href="'. home_url() .'">';
+			$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
+			$logoHTML .= '</a>';
 			$logoHTML .= '</li>';
 		}
 
-		$items = $logoHTML . $items;
+		$langueHTML  = '<li class="menu-item-langue">';
+		$langueHTML .= '<span class="active position-relative py-5">FR</span>';
+		$langueHTML .= '<ul class="sous-menu d-none position-absolute bg-white mt-2 py-3">';
+		$langueHTML .= '<li class="my-1 px-4"><span class="fr">FR</span></li>';
+		$langueHTML .= '<li class="my-1 px-4"><span class="en">EN</span></li>';
+		$langueHTML .= '<li class="my-1 px-4"><span class="es">ES</span></li>';
+		$langueHTML .= '<li class="my-1 px-4"><span class="de">DE</span></li>';
+		$langueHTML .= '</ul>';
+		$langueHTML .= '</li>';
+
+		$items = $logoHTML . $items . $langueHTML;
 	}
 
 	if ( $args->theme_location == 'footer1' || $args->theme_location == 'footer2') {
@@ -52,13 +62,13 @@ function awc_wp_menu_items( $items, $args ) {
 
 		if ($logo) {
 			$logoHTML  = '<li class="menu-item-logo mb-4">';
-				$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
+			$logoHTML .= '<img src="'. $logo['url'] .'" alt="'. $logo['alt'] .'" />';
 			$logoHTML .= '</li>';
 		}
 
 		if ($notule) {
 			$notuleHTML  = '<li class="menu-item-notule">';
-				$notuleHTML .= '<p class="text-white">'. $notule .'</p>';
+			$notuleHTML .= '<p class="text-white">'. $notule .'</p>';
 			$notuleHTML .= '</li>';
 		}
 

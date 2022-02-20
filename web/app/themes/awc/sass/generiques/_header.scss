@@ -18,4 +18,33 @@ header {
   &.header-reduit {
     .menu-item-logo img { max-width: 150px; }
   }
+
+  .menu-item-langue {
+    width: 40px;
+
+    &:hover {
+      & > .sous-menu {
+        display: block!important;
+        box-shadow: 0 0 20px #{$typo}20;
+        margin-left: -1.5rem;
+
+        li { cursor: pointer; }
+      }
+    }
+
+    .active {
+      cursor: pointer;
+
+      &:after {
+        display: inline-block;
+        content: '';
+        width: 0; height: 0;
+        border-style: solid;
+        border-width: 8px 5px 0 5px;
+        border-color: $typo transparent transparent transparent;
+        vertical-align: 2px;
+        margin-left: 10px;
+      }
+    }
+  }
 }

@@ -5,13 +5,13 @@ web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
-web/app/languages/*
+#web/app/languages/*
 
 # WordPress
 web/wp
 web/.htaccess
-web/app/themes/awc/style.css
-web/app/themes/awc/style.min.css
+#web/app/themes/awc/style.css
+#web/app/themes/awc/style.min.css
 
 # Logs
 *.log

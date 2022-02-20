@@ -1,0 +1,495 @@
+/*
+Theme Name: Test Atelier Conception Web
+Theme URI:
+Author: Atelier Conception Web
+Author URI: https://www.latelier-conceptionweb.com
+*/
+/**
+ * -----------------------------------------------------------
+ * COULEURS
+ * -----------------------------------------------------------
+*/
+/**
+ * -----------------------------------------------------------
+ * FONTS
+ * -----------------------------------------------------------
+*/
+/** --- Typo --- */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+/**
+ * -----------------------------------------------------------
+ * MIXINS
+ * -----------------------------------------------------------
+*/
+/** --- Titres --- */
+/** --- Transition --- */
+/** --- Transforms --- */
+/** --- Animations --- */
+/**
+ * -----------------------------------------------------------
+ * BONES
+ * -----------------------------------------------------------
+*/
+/** --- Start --- */
+html {
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+		font-size: 15px;
+}
+
+html * {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+		width: 100vw;
+		max-width: 100%;
+		font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+		font-size: 1rem;
+		overflow-x: hidden;
+		margin: 0;
+}
+
+::selection {
+		background: #8835b0;
+		color: white;
+}
+
+:after, :before {
+		box-sizing: border-box;
+}
+
+/** --- Element Selector --- */
+main, footer {
+		position: relative;
+}
+
+h1, h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 0 0 1rem;
+}
+
+h3 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		margin: 0 0 .5rem;
+}
+
+p {
+		font-size: 1rem;
+		font-weight: normal;
+		color: #6e6e6e;
+		line-height: 1.7;
+		margin: .5rem 0;
+}
+
+a {
+		outline: none;
+		text-decoration: none;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+
+a:hover {
+		color: #8835b0;
+}
+
+ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+}
+
+ul li a {
+		color: #23252f;
+}
+
+strong {
+		font-weight: 600;
+}
+
+figure {
+		height: 100%;
+}
+
+figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+}
+
+/**
+ * -----------------------------------------------------------
+ * INITIALISER BLOCS GUTENBERG
+ * -----------------------------------------------------------
+*/
+/** --- Couleurs --- */
+.has-primaire-color {
+		color: #8835b0;
+}
+
+.has-secondaire-color {
+		color: #a5a5a5;
+}
+
+.has-typo-color {
+		color: #6e6e6e;
+}
+
+.has-background-color {
+		color: #23252f;
+}
+
+.has-blanc-color {
+		color: white;
+}
+
+.has-primaire-background-color {
+		background: #8835b0;
+}
+
+.has-secondaire-background-color {
+		background: #a5a5a5;
+}
+
+.has-typo-background-color {
+		background: #6e6e6e;
+}
+
+.has-background-background-color {
+		background: #23252f;
+}
+
+.has-blanc-background-color {
+		background: white;
+}
+
+/** --- Colonnes --- */
+.wp-block-columns {
+		margin-bottom: 0;
+}
+
+.wp-block-columns.is-not-stacked-on-mobile > .wp-block-column:not(:first-child) {
+		margin-left: 0;
+}
+
+/** --- Images --- */
+.wp-block-image {
+		margin-bottom: 0;
+}
+
+/**
+ * -----------------------------------------------------------
+ * CLASSES ATELIER CONCEPTION WEB
+ * -----------------------------------------------------------
+*/
+/** --- Design hn --- */
+.hn {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 0 0 1rem;
+}
+
+/** --- Tiny Slider --- */
+.tns-outer {
+		margin: 4rem 0;
+}
+
+.tns-outer .tns-item img {
+		object-fit: contain;
+}
+
+/** --- Boutons --- */
+.button {
+		display: block;
+		width: fit-content;
+}
+
+.button:hover {
+		background: white;
+		color: #8835b0 !important;
+}
+
+footer .menu-item-logo img {
+		width: 50%;
+		max-width: 220px;
+		max-height: 35px;
+		object-fit: contain;
+		object-position: left;
+}
+
+footer .menu-footer-1-container .menu-item-notule {
+		width: 40%;
+}
+
+footer .menu-footer-2-container #menu-footer-2 {
+		margin-left: auto;
+}
+
+footer .menu-item {
+		display: inline-block;
+}
+
+footer .menu-item:not(:last-child) {
+		margin-right: 3rem;
+}
+
+footer .menu-item a {
+		display: block;
+		font-weight: 600;
+		color: white;
+		margin-top: 4rem;
+}
+
+footer p {
+		font-weight: 300;
+}
+
+header {
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		z-index: 10;
+}
+
+header .menu-header-container {
+		width: 75%;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+header .menu-item-logo img {
+		filter: brightness(0.1) sepia(1) saturate(4000%) hue-rotate(270deg);
+		max-width: 200px;
+}
+
+header.header-reduit .menu-item-logo img {
+		max-width: 150px;
+}
+
+header .menu-item-langue {
+		width: 40px;
+}
+
+header .menu-item-langue:hover > .sous-menu {
+		display: block !important;
+		box-shadow: 0 0 20px #6e6e6e20;
+		margin-left: -1.5rem;
+}
+
+header .menu-item-langue:hover > .sous-menu li {
+		cursor: pointer;
+}
+
+header .menu-item-langue .active {
+		cursor: pointer;
+}
+
+header .menu-item-langue .active:after {
+		display: inline-block;
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 8px 5px 0 5px;
+		border-color: #6e6e6e transparent transparent transparent;
+		vertical-align: 2px;
+		margin-left: 10px;
+}
+
+#questions-faq .wp-block-cover span {
+		opacity: 1;
+		border-radius: 1.5rem;
+}
+
+#questions-faq .wp-block-cover span:before {
+		background-color: #23252f;
+		filter: brightness(1.5);
+		border-radius: 1.5rem;
+}
+
+#questions-faq .wp-block-cover img.wp-block-cover__image-background {
+		border-radius: 1.5rem;
+		mix-blend-mode: overlay;
+		z-index: 1;
+}
+
+#questions-faq .redactionnel * {
+		text-shadow: 0 0 5px #00000030;
+}
+
+#questions-faq article div {
+		background-color: white;
+		-webkit-transition: background-color 0.3s ease;
+		-moz-transition: background-color 0.3s ease;
+		transition: background-color 0.3s ease;
+}
+
+#questions-faq article div p[class*="user-"] {
+		flex-basis: calc(100% - 100px);
+		-webkit-transition: color 0.3s ease;
+		-moz-transition: color 0.3s ease;
+		transition: color 0.3s ease;
+}
+
+#questions-faq article div p[class*="user-"]:first-letter {
+		text-transform: uppercase;
+}
+
+#questions-faq article div a:hover {
+		background-color: white;
+		color: #8835b0 !important;
+}
+
+#questions-faq article div.is-hover {
+		background-color: #8835b0 !important;
+}
+
+#questions-faq article div.is-hover p[class*="user-"] {
+		color: white;
+}
+
+#questions-faq a.button:hover {
+		background-color: white !important;
+		color: #8835b0 !important;
+}
+
+#mots-cles article {
+		flex-basis: calc(25% - 1.5rem);
+}
+
+#mots-cles article .wp-block-columns {
+		column-gap: 1.5rem;
+}
+
+#mots-cles article .wp-block-columns h3 {
+		margin-bottom: 0;
+}
+
+#marques .tns-inner {
+		position: relative;
+}
+
+#marques .tns-inner:before, #marques .tns-inner:after {
+		position: absolute;
+		top: 0;
+		content: '';
+		width: 10%;
+		height: 100%;
+		z-index: 1;
+}
+
+#marques .tns-inner:before {
+		left: 0;
+		background-image: -webkit-linear-gradient(left, white, rgba(255, 255, 255, 0));
+		background-image: linear-gradient(left, white, rgba(255, 255, 255, 0));
+}
+
+#marques .tns-inner:after {
+		right: 0;
+		background-image: -webkit-linear-gradient(right, white, rgba(255, 255, 255, 0));
+		background-image: linear-gradient(right, white, rgba(255, 255, 255, 0));
+}
+
+#marques .tns-item img {
+		width: 80%;
+		max-width: 100px;
+		max-height: 50px;
+}
+
+#marques .button {
+		border-color: #8835b0 !important;
+}
+
+#aide-instructions {
+		height: calc(100vh - 140px);
+		min-height: 500px;
+		margin-top: 140px;
+}
+
+#aide-instructions #banner img {
+		filter: brightness(0.8);
+}
+
+#aide-instructions #banner p {
+		text-shadow: 0 0 5px #000000ee;
+}
+
+#aide-instructions #banner p.hn {
+		font-size: 3rem;
+}
+
+#aide-instructions #banner-inner--search {
+		width: 55vw;
+		margin-left: -2.5vw;
+}
+
+#aide-instructions #banner-inner--search .nav-tabs button {
+		color: #a5a5a5;
+		border-bottom: 2px solid transparent !important;
+		padding-bottom: 10px !important;
+}
+
+#aide-instructions #banner-inner--search .nav-tabs button:hover {
+		color: #8835b0;
+}
+
+#aide-instructions #banner-inner--search .nav-tabs button.active {
+		color: #8835b0;
+		border-bottom: 2px solid #8835b0 !important;
+}
+
+#aide-instructions #banner-inner--search #nav-tabContent .tab-pane {
+		font-size: .9rem;
+		color: #6e6e6e;
+}
+
+#aide-instructions #banner-inner--search #nav-tabContent .tab-pane span:after {
+		position: absolute;
+		top: -3px;
+		right: -25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		content: '?';
+		background-color: #8835b0;
+		width: 20px;
+		height: 20px;
+		font-weight: 600;
+		color: white;
+		line-height: 0;
+		border-radius: 100%;
+		padding: 14px;
+}
+
+#aide-instructions #banner-inner--search #nav-tabContent .autoComplete_wrapper {
+		width: 100%;
+}
+
+#aide-instructions #banner-inner--search #nav-tabContent button {
+		min-width: 130px;
+		margin: 6px 0 0 -112px;
+		padding: 5px 10px 6px;
+		-webkit-transition: all 0.3s ease;
+		-moz-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+}
+
+#aide-instructions #banner-inner--search #nav-tabContent button:hover {
+		background-color: white;
+		color: #8835b0 !important;
+}
+
+#aide-instructions #banner-inner--search input {
+		width: calc(100% + 50px);
+		background-color: #a5a5a550 !important;
+		color: #a5a5a5;
+		margin-left: -25px;
+}
+
+#aide-instructions #banner-inner--search input::placeholder {
+		color: #a5a5a5;
+}

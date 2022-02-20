@@ -28,8 +28,8 @@
     if ( is_array( $results ) && ! is_wp_error( $results ) ) {
       $length = 0;
       foreach ( $results as $result ) {
-        echo '<article class="rounded-3 p-4 mb-3 bg-white">';
-          echo '<div class="d-flex flex-row align-items-center justify-content-between">';
+        echo '<article class="mb-3">';
+          echo '<div class="d-flex flex-row align-items-center justify-content-between bg-white rounded-3 p-3">';
             echo '<p class="user-'. $result->id .'">';
               echo $result->title;
             echo '</p>';

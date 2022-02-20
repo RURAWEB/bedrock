@@ -22,5 +22,38 @@
 
   .redactionnel * { text-shadow: 0 0 5px #00000030; }
 
-  p[class*="user-"]:first-letter { text-transform: uppercase; }
+  article {
+    div {
+      background-color: white;
+      @include transition(background-color);
+
+      p[class*="user-"] {
+        flex-basis: calc(100% - 100px);
+        @include transition(color);
+
+        &:first-letter { text-transform: uppercase; }
+      }
+
+      a {
+        &:hover {
+          background-color: white;
+          color: $primaire!important;
+        }
+      }
+
+      &.is-hover {
+        background-color: $primaire!important;
+
+        p[class*="user-"] { color: white; }
+      }
+    }
+  }
+
+  a.button {
+    &:hover {
+      background-color: white!important;
+      color: $primaire!important;
+    }
+  }
+
 }

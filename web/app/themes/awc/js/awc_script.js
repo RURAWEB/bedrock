@@ -39,4 +39,13 @@ $(document).ready(function($) {
     });
   }
 
+  // Ajouter un fond de couleur sur le parent au hover sur l'enfant
+  if ( $('#questions-faq').length > 0 ) {
+    $( '#questions-faq article a' ).on( 'mouseover', function() {
+      $( this ).parent().addClass( 'is-hover' );
+    }).on( 'mouseout', function() {
+      $( this ).parent().removeClass( 'is-hover' );
+    })
+  }
+
 }); // ----------->  FIN (document).ready(function($)
